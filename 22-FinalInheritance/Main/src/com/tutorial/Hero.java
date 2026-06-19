@@ -13,7 +13,11 @@ public class Hero {
         return this.health;
     }
 
-    void display(){
+    final void setHealth(double newHealth){
+        this.health = newHealth;
+    }
+
+    public void display(){
         System.out.println(this.name + " Have " + this.health);
     }
 }
