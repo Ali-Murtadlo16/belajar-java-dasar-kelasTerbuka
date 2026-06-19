@@ -12,11 +12,17 @@ public class Hero {
     double getHealth(){
         return this.health;
     }
-
+    
     final void setHealth(double newHealth){
         this.health = newHealth;
     }
-
+    
+    void setHealth(String mode){
+        if(mode.equals("reset")){
+            this.health = 100;
+        }
+    }
+    
     public void display(){
         System.out.println(this.name + " Have " + this.health);
     }

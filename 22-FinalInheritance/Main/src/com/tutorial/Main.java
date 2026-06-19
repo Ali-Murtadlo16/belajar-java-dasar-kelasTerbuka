@@ -5,6 +5,8 @@ package com.tutorial;
 //2. if Method or Atribute in private explisite,
 //    then subclass can't access too
 //3. if Method or Atribute in final keyword is unactivate and be legacy,
+//    but can't be override in same class
+
 public class Main{
     public static void main(String[] args){
         System.out.println("");
@@ -22,6 +24,12 @@ public class Main{
         hero2.setHealth(50);
         
         hero1.display();
+        hero2.display();
+        
+        hero1.setHealth("reset");
+        hero1.display();
+        
+        hero2.setHealth("reset");
         hero2.display();
     }
 }
