@@ -10,4 +10,8 @@ public class Hero {
     void display(){
         System.out.println("\nName \t:\t" + this.name);
     }
+
+    void attack(Hero enemy){
+        System.out.println("Attacking ");
+    }
 }

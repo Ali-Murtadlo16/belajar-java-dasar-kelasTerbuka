@@ -12,4 +12,8 @@ public class HeroAgility extends Hero{
         super.display();
         System.out.println("Type \t:\t" + this.type);
     }
+
+    void showoff(){
+        System.out.println("Im an Agility Hero ");
+    }
 }
