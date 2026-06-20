@@ -5,10 +5,12 @@ public class HeroStrength extends Hero{
         super(name);
     }
 
+    @Override
     public void display(){
         System.out.println("Hero " + this.name);
     }
 
+    @Override
     public void setName(String name){
         super.setName(name);
     }
