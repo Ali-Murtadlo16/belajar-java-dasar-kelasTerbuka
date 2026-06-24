@@ -42,13 +42,12 @@ public class Main{
         
         // Method in Arraylist
         System.out.println("Method: ");
-        System.out.println("1, size()" + listHero.size());
-        System.out.println("2, isEmpty()" + listHero.isEmpty());
-        System.out.println("1, size()" + listHero.size());
-        System.out.println("1, size()" + listHero.size());
-        System.out.println("1, size()" + listHero.size());
-        System.out.println("1, size()" + listHero.size());
-        System.out.println("1, size()" + listHero.size());
+        System.out.println("1, size()\t: " + listHero.size());
+        System.out.println("2, isEmpty()\t: " + listHero.isEmpty());
+        System.out.println("3, contains(hero2)\t: " + listHero.contains(hero2));
+        System.out.println("4, contains(heroAgility)\t: " + listHero.contains(heroAgility));
+        System.out.println("5, indexOf(hero1)\t: " + listHero.indexOf(hero1));
+        System.out.println("6, indexOf(heroAgility)\t: " + listHero.indexOf(heroAgility));
 
         hero1.display();
         hero2.display();
