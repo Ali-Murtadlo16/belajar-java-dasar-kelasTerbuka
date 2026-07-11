@@ -9,7 +9,7 @@ public abstract class Hero {
         this.health = health;
     }
 
-    void display(){
+    public void display(){
         System.out.println("Name: " + this.name);
         System.out.println("Health: " + this.health);
     }
