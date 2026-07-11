@@ -1,0 +1,4 @@
+B:\01-belajar-mandiri\04-belajar-dasar-java\01-kelas-terbuka-java\31-ReflectionMethodnConstructor\Main\src\com\Hero\Hero.java
+B:\01-belajar-mandiri\04-belajar-dasar-java\01-kelas-terbuka-java\31-ReflectionMethodnConstructor\Main\src\com\Hero\HeroAgility.java
+B:\01-belajar-mandiri\04-belajar-dasar-java\01-kelas-terbuka-java\31-ReflectionMethodnConstructor\Main\src\com\tutorial\Main.java
+B:\01-belajar-mandiri\04-belajar-dasar-java\01-kelas-terbuka-java\31-ReflectionMethodnConstructor\Main\src\App.java
