@@ -11,8 +11,9 @@ class Mahasiswa{
     String NIM;
     String jurusan;
     String daerah;
+    String Hobby;
     int umur;
-    
+
     Mahasiswa(){
         System.out.println("Constructor Mahasiswa is called");
     }
@@ -31,20 +32,22 @@ public class Main{
 
         System.out.println(objectPolosan.dataString);
         System.out.println(objectPolosan.dataInt);
-    
+
         Mahasiswa objectMahasiswa = new Mahasiswa();
         objectMahasiswa.nama = "Ali";
         objectMahasiswa.NIM = "123456789";
         objectMahasiswa.jurusan = "Teknik Informatika";
         objectMahasiswa.daerah = "Lamongan";
+        objectMahasiswa.Hobby = "";
         objectMahasiswa.umur = 17;
 
         System.out.println(objectMahasiswa.nama);
         System.out.println(objectMahasiswa.NIM);
         System.out.println(objectMahasiswa.jurusan);
         System.out.println(objectMahasiswa.daerah);
+        System.out.println(objectMahasiswa.Hobby);
         System.out.println(objectMahasiswa.umur);
-    
+
         Mahasiswa mahasiswa2 = new Mahasiswa("Murtadlo");
         Mahasiswa mahasiswa3 = new Mahasiswa("Asadillah");
 
