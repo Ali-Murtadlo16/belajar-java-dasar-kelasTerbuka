@@ -7,6 +7,7 @@ class Mahasiswa{
     String daerah;
     double ipk;
     int umur;
+    String kesibukan;
 }
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -16,6 +17,7 @@ public class Main {
         mahasiswa1.nim = "123456789";
         mahasiswa1.ipk = 4.0;
         mahasiswa1.umur = 17;
+        mahasiswa1.kesibukan = "";
         mahasiswa1.daerah = "Lamongan";
 
         System.out.println(mahasiswa1.nama);
@@ -23,7 +25,7 @@ public class Main {
         System.out.println(mahasiswa1.nim);
         System.out.println(mahasiswa1.ipk);
         System.out.println(mahasiswa1.umur);
-    
+        System.out.println(mahasiswa1.kesibukan);
         System.out.println(mahasiswa1.daerah);
 
     }
