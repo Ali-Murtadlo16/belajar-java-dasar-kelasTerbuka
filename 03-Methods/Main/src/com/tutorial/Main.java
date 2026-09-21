@@ -2,7 +2,7 @@ package com.tutorial;
 
 public class Main {
     public static void main(String[] args) {
-        Mahasiswa mahasiswa1 = new Mahasiswa("Ali", "462025", "Teknik Informatika");
+        Mahasiswa mahasiswa1 = new Mahasiswa("Ali", "462025611", "Teknik Informatika");
         System.out.println(mahasiswa1.nama);
         test();
 
