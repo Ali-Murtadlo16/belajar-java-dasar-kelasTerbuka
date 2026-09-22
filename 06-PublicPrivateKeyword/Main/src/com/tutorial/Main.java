@@ -2,17 +2,23 @@ package com.tutorial;
 
 class Player {
     private String name;
+    private int level;
     public int exp;
+    public int getLevel() {
+        return level;
+    }
 
     Player(String name, int exp) {
         this.name = name;
         this.exp = exp;
+        this.level = 1;
     }
 
     void display(){
         tambahExp(50);
         System.out.println("\nName " + this.name);
         System.out.println("Exp " + this.exp);
+        System.out.println("Level " + this.level);
     }
 
     public void ubahNama(String name) {
@@ -25,6 +31,9 @@ class Player {
 
     private void ubahExp(int exp) {
         this.exp = exp;
+        if (this.exp >= 100) {
+            this.level++;
+        }
     }
     public String getName() {
         return name;
@@ -51,14 +60,14 @@ public class Main {
         System.out.println(player2.getName());
         player2.setName("Asadillah");
         System.out.println(player2.getName());
-    
+
         System.out.println(player2.exp);
         player2.tambahExp(50);
         System.out.println(player2.exp);
 
         player1.display();
         player2.display();
-    
+
 
     }
 }
