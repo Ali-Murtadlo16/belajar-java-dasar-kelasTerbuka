@@ -8,14 +8,14 @@ class Player {
     private Weapon weapon;
     private int level;
     private final int incrementAttack;
-    private int currentHealth; 
+    private int currentHealth;
 
     public Player(String name){
         this.name = name;
-        this.baseHealth = 100;
-        this.baseAttack = 100;
+        this.baseHealth = 1000;
+        this.baseAttack = 30;
         this.level = 1;
-        this.incrementAttack = 20;
+        this.incrementAttack = 10;
     }
 
     public String getName() {
@@ -26,14 +26,13 @@ class Player {
         return this.currentHealth;
     }
 
-    // Mengecek apakah player masih hidup
     public boolean isAlive() {
         return this.currentHealth > 0;
     }
 
     public void levelUp(){
         this.level++;
-        this.currentHealth = this.maxHealth(); 
+        this.currentHealth = this.maxHealth();
     }
 
     public void initHealth() {
@@ -50,7 +49,7 @@ class Player {
 
     public void setArmor(Armor armor){
         this.armor = armor;
-        initHealth(); 
+        initHealth();
     }
 
     public void setWeapon(Weapon weapon){
@@ -69,29 +68,27 @@ class Player {
     }
 
     public int getAttackPower(){
-        int weaponAttack = 0;
+        int weaponAttack = 25;
         if (this.weapon != null) {
             weaponAttack = this.weapon.getAttack();
         }
         return this.baseAttack + this.level * this.incrementAttack + weaponAttack;
     }
 
-    // Method menyerang musuh
     public void attack(Player enemy) {
         int damageDealt = this.getAttack();
-        System.out.println("⚔️ [" + this.name + "] menyerang [" + enemy.getName() + "] sebesar " + damageDealt + " DMG!");
+        System.out.println("⚔️ [" + this.name + "] menyerang [" + enemy.getName() + "] sebesar " + damageDealt + " DAMAGE!");
         enemy.takeDamage(damageDealt);
     }
 
-    // Method menerima damage
     public void takeDamage(int damage) {
-        int defense = 0;
+        int defense = 50;
         if (this.armor != null) {
-            defense = this.armor.getStrength() * 5; 
+            defense = this.armor.getStrength() * 5;
         }
 
         int netDamage = damage - defense;
-        if (netDamage < 1) netDamage = 1; 
+        if (netDamage < 1) netDamage = 1;
 
         this.currentHealth -= netDamage;
         if (this.currentHealth < 0) this.currentHealth = 0;
@@ -136,17 +133,15 @@ class Armor {
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        // Setup Player 1
         Player player1 = new Player("Ali");
-        Armor armor1 = new Armor("Baju Besi", 5, 100);
-        Weapon weapon1 = new Weapon("Pedang", 25); // Menaikkan attack agar match cepat selesai
+        Armor armor1 = new Armor("Baju Besi", 10, 150);
+        Weapon weapon1 = new Weapon("Pedang", 45);
         player1.setArmor(armor1);
         player1.setWeapon(weapon1);
-        
-        // Setup Player 2
+
         Player player2 = new Player("Murtadlo");
-        Armor armor2 = new Armor("Baju Baja", 5, 80);
-        Weapon weapon2 = new Weapon("Keris", 30);
+        Armor armor2 = new Armor("Baju Baja", 25, 70);
+        Weapon weapon2 = new Weapon("Keris", 35);
         player2.setArmor(armor2);
         player2.setWeapon(weapon2);
 
@@ -157,43 +152,36 @@ public class Main {
         System.out.println("\n🔥 PERTANDINGAN DIMULAI 🔥\n");
         int ronde = 1;
 
-        // Loop berjalan secara real-time sampai salah satu Player mati (isAlive() = false)
         while (player1.isAlive() && player2.isAlive()) {
             System.out.println("--- RONDE " + ronde + " ---");
-            
-            // Player 1 menyerang Player 2
+
             player1.attack(player2);
             System.out.println();
-            
-            // Jeda waktu 1 detik agar terasa real-time mengalir
-            Thread.sleep(1000); 
 
-            // Cek apakah Player 2 sudah mati setelah diserang Player 1
+            Thread.sleep(1000);
+
             if (!player2.isAlive()) {
-                break; // Keluar dari loop jika Player 2 mati
+                break;
             }
 
-            // Player 2 membalas menyerang Player 1
             player2.attack(player1);
             System.out.println();
-            
-            // Jeda waktu 1 detik lagi sebelum masuk ronde berikutnya
+
             Thread.sleep(1000);
 
             ronde++;
         }
 
-        // DEKLARASI PEMENANG //
         System.out.println("=================================");
         System.out.println("💥 PERTANDINGAN BERAKHIR! 💥");
         System.out.println("=================================");
-        
+
         if (player1.isAlive()) {
             System.out.println("🏆 PEMENANGNYA ADALAH: [" + player1.getName() + "] 🎉");
         } else {
             System.out.println("🏆 PEMENANGNYA ADALAH: [" + player2.getName() + "] 🎉");
         }
-        
+
         System.out.println("\n=== STATUS AKHIR ===");
         player1.display();
         player2.display();
