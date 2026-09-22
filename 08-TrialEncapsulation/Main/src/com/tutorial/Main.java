@@ -14,6 +14,8 @@ class Player{
         this.baseHealth = 100;
         this.baseAttack = 100;
         this.level = 1;
+        this.armor = null;
+        this.weapon = null;
         this.incrementAttack = 20;
     }
 
@@ -107,7 +109,7 @@ public class Main{
         player1.display();
         player1.levelUp();
         player1.display();
-        
+
         Player player2 = new Player("Murtadlo");
         Armor armor2 = new Armor("baju Baja", 5,100);
         Weapon weapon2 = new Weapon("Keris", 10);
