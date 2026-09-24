@@ -21,9 +21,12 @@ public class Main{
     public static void main(String[] args){
         Display display1 = new Display("Monitor");
         display1.show();
-        
+
         Display display2 = new Display("Smartphone");
         display2.show();
+
+        Display display3 = new Display("Tablet");
+        display3.show();
 
         // Show static variable
         // Change static variable
@@ -32,7 +35,8 @@ public class Main{
         System.out.println("\nMenampilkan static class variable");
         System.out.println(display1.type);
         System.out.println(display2.type);
+        System.out.println(display3.type);
         System.out.println(Display.type);
-        
+
     }
 }
