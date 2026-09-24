@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 class Player{
     private static int numberOfPlayer;
-    private static ArrayList<String> namelist = new ArrayList<String>();    
+    private static ArrayList<String> namelist = new ArrayList<String>();
     private String name;
 
     Player(String name){
@@ -15,7 +15,7 @@ class Player{
     void show(){
         System.out.println("Player name: " + this.name);
     }
-    
+
     // Static method
     static void showNumberOfPlayer(){
         System.out.println("Number Of Player : " + Player.numberOfPlayer);
@@ -23,6 +23,12 @@ class Player{
 
     static ArrayList<String> getNames(){
         return Player.namelist;
+    }
+
+    static void showNameList(){
+        for(String name : Player.namelist){
+            System.out.println(name);
+        }
     }
 
 }
@@ -36,5 +42,6 @@ class Main{
         Player.showNumberOfPlayer();
 
         System.out.println("Name = " + Player.getNames());
+        Player.showNameList();
     }
 }
