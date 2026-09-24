@@ -6,7 +6,7 @@ public class Main {
         Player player1 = new Player("Ahmad");
         Player player2 = new Player("Ali");
         Player player3 = new Player("Murtadlo");
-        Player player4 = new Player();
+        Player player4 = new Player("Asadillah");
 
         player1.show();
         player2.show();
